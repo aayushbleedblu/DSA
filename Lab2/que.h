@@ -30,3 +30,4 @@ Queue addQ(Queue q , Element e);
 int lengthQ(Queue q);
 
 Element newEle (int p, int id);
+void printQ(Queue q);

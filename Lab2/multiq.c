@@ -5,7 +5,6 @@ mq1->arr1 = (struct ArrElem*)malloc(sizeof(struct ArrElem)*num);
 
 */
 
-#include "que.h"
 #include "multiq.h"
 
 MultiQ createMQ(int num)
@@ -22,7 +21,7 @@ MultiQ createMQ(int num)
 
 MultiQ addMQ(MultiQ mq, Task t)
 {
-	mq->arr[t->priority]=addQ(mq->arr[t->priority], t);
+	mq->arr[t->priority-1]=addQ(mq->arr[t->priority-1], t);
 	return mq;
 }
 
@@ -44,6 +43,7 @@ MultiQ delNextMQ(MultiQ mq)
 		i++;
 	}
 	mq->arr[i] = delQ(mq->arr[i]);
+	return mq;
 }
 
 Boolean isEmptyMQ(MultiQ mq)

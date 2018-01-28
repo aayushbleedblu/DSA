@@ -1,14 +1,6 @@
 #include "que.h"
 
-void printQ(Queue q)
-{
-    Element temp = q->head;
-    while(temp!=NULL)
-    {
-        printf("P=%d, Tid=%d\n", temp->priority, temp->tid);
-        temp = temp->next;
-    }
-}
+
 
 int main()
 {

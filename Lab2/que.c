@@ -79,4 +79,12 @@ Element newEle(int p, int id)
 	e->tid=id;
 }
 
-
+void printQ(Queue q)
+{
+    Element temp = q->head;
+    while(temp!=NULL)
+    {
+        printf("P=%d, Tid=%d\n", temp->priority, temp->tid);
+        temp = temp->next;
+    }
+}

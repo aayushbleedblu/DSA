@@ -1,3 +1,5 @@
+#include "que.h"
+
 struct MultiQ
 {
 	Queue* arr;
@@ -10,7 +12,7 @@ typedef Element Task;
 typedef struct MultiQ* MultiQ;
 typedef int Priority;
 
-MulitQ createMQ(int num); // creates a list of num Queues, each of which is empty.
+MultiQ createMQ(int num); // creates a list of num Queues, each of which is empty.
 MultiQ addMQ(MultiQ mq, Task t); // adds t to the Queue corresponding to priority p in mq. Task includes a TaskID tid and a priority p.
 Task nextMQ(MultiQ mq); // returns the front of the non-empty Queue in mq with the highest priority.
 MultiQ delNextMQ(MultiQ mq); // deletes the front of the non-empty Queue in mq with the highest priority; returns the modified MultiQ
