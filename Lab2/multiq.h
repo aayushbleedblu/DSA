@@ -21,8 +21,9 @@ int sizeMQ(MultiQ mq); // returns the total number of items in the MultiQ
 int sizeMQbyPriority(MultiQ mq, Priority p); //returns the number of items in mq with the priority p.
 Queue getQueueFromMQ(MultiQ mq, Priority p); //returns the Queue with priority p.
 
-
-
+MultiQ loadData(MultiQ mq, FILE* f);
+MultiQ testDel(MultiQ mq,int num);
+void printmq(MultiQ mq);
 
 
 

@@ -2,13 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void printmq(MultiQ mq)
-{
-	for(int i=0; i<mq->count; i++)
-	{
-		printQ(mq->arr[i]);
-	}
-}
 
 int main()
 {

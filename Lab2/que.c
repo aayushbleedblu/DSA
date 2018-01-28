@@ -24,10 +24,10 @@ Queue delQ(Queue q)
 	{
 		return q;
 	}
-	else if (q->head==q->tail)
+	else if (q->head->next==NULL)
 	{
-		q->head==NULL;
-		q->tail==NULL;
+		q->head=NULL;
+		q->tail=NULL;
 		return q;
 	}
 	q->head = q->head->next;
