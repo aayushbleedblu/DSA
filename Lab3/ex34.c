@@ -138,13 +138,55 @@ void testCyclic1(list ls)
 	}
 }
 
+void testCyclic2(list ls)
+{
+	if(ls->head==NULL)
+	{
+		printf("\nempty list");
+		return;
+	}
+	element prev=(element)malloc(sizeof(struct element));
+	element temp=(element)malloc(sizeof(struct element));
+	element fut=(element)malloc(sizeof(struct element));
+	prev=temp=fut=ls->head;
+	temp=temp->next;
+	if(temp==NULL)
+	{
+		printf("\nlinear list");
+		return;
+	}
+	else if(temp==ls->head)
+	{
+		printf("\ncyclic list");
+		return;
+	}
+	fut=fut->next->next;
+	prev->next=NULL;
+	while(fut!=NULL)
+	{
+		temp->next=prev;
+		prev=temp;
+		temp=fut;
+		fut=fut->next;
+	}
+	if(temp==ls->head)
+	{
+		printf("\ncyclic list");
+	}
+	else
+	{
+		printf("\nlinear list");
+	}
+}
+
 int main()
 {
 	srand(time(NULL));
-	list ls = createList(4);
+	list ls = createList(1);
 	ls = createCycle(ls);
 	printList(ls);
 	testCyclic1(ls);
+	testCyclic2(ls);
 	return 0;
 }
 
