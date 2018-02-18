@@ -1,3 +1,6 @@
+test: compileAll
+	./exe
+
 compileAll: ex1.o ex2.o ex2driver.o
 	gcc ex1.o ex2.o ex2driver.o -o exe
 	
